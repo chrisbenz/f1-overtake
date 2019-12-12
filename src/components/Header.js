@@ -6,8 +6,7 @@ export default function Header() {
 
     return(
         <div>
-            <h1>F1 Overtake</h1>
-            <img 
+            <img
                 className="logo"
                 src={f1Logo}
                 alt="Formula 1 Logo"
