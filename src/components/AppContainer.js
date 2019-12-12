@@ -1,6 +1,22 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Toolbar from '@material-ui/core/Toolbar';
+import f1Logo from "../images/f1.png";
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import List from '@material-ui/core/List';
+import { Link } from "react-router-dom";
+import InfoIcon from '@material-ui/icons/Info';
+import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import EqualizerIcon from '@material-ui/icons/Equalizer';
+import Divider from '@material-ui/core/Divider';
 
 
 const drawerWidth = 240;
@@ -29,26 +45,52 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function AppContainer() {
+
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
-      </main>
-    </div>
+      <div className={classes.root}>
+        <CssBaseline />
+          <AppBar position="fixed" className={classes.appBar}>
+            <Toolbar>
+              <img src={f1Logo} alt="F1 Logo" className="logo"/>
+              <Typography variant="h6" noWrap>
+                Overtake
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <Drawer
+            className={classes.drawer}
+            variant="permanent"
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+          <div className={classes.toolbar} />
+            <List>
+              <Link style={{textDecoration:'none', color:'grey'}} to="/">
+                <ListItem button key="home">
+                  <ListItemIcon><HomeIcon /></ListItemIcon>
+                    <ListItemText primary="Home" />
+                      </ListItem>
+              </Link>
+              <Link  style={{textDecoration:'none', color:'grey'}} to="/data">
+                <ListItem button key="data">
+                  <ListItemIcon><EqualizerIcon /></ListItemIcon>
+                    <ListItemText primary="Data" />
+                      </ListItem>
+              </Link>
+              <Link  style={{textDecoration:'none', color:'grey'}} to="/about">
+                <ListItem button key="about">
+                  <ListItemIcon><InfoIcon /></ListItemIcon>
+                    <ListItemText primary="About" />
+                      </ListItem>
+              </Link>
+            </List>
+            <Divider />
+          </Drawer>
+        </div>
+      </div>
   );
 }

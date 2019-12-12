@@ -56,52 +56,13 @@ export default function Root() {
         <Router>
             <div>
                 <div className={classes.root}>
-                <CssBaseline />
-                <AppBar position="fixed" className={classes.appBar}>
-                    <Toolbar>
-                    <img src={f1Logo} alt="F1 Logo" className="logo"/>
-                    <Typography variant="h6" noWrap>
-                        Overtake
-                    </Typography>
-                    </Toolbar>
-                </AppBar>
-                <Drawer
-                    className={classes.drawer}
-                    variant="permanent"
-                    classes={{
-                    paper: classes.drawerPaper,
-                    }}
-                >
-                <div className={classes.toolbar} />
-                    <List>
-                        <Link to="/">
-                            <ListItem button key="home">
-                            <ListItemIcon><HomeIcon /></ListItemIcon>
-                            <ListItemText primary="Home" />
-                            </ListItem>
-                        </Link>
-                        <Link to="/data">
-                            <ListItem button key="data">
-                            <ListItemIcon><EqualizerIcon /></ListItemIcon>
-                            <ListItemText primary="Data" />
-                            </ListItem>
-                        </Link>
-                        <Link to="/about">
-                            <ListItem button key="about">
-                            <ListItemIcon><InfoIcon /></ListItemIcon>
-                            <ListItemText primary="About" />
-                            </ListItem>
-                        </Link>
-                    </List>
-                    <Divider />
-                </Drawer>
-                <Switch>
-                <Route path="/" exact component={Home}/>
-                    <Route path="/data" component={Data}/>
-                    <Route path="/about" component={About}/>
-                </Switch>
-                </div>
-                
+                    <AppContainer/>
+                    <Switch>
+                        <Route path="/" exact component={Home}/>
+                        <Route path="/data" component={Data}/>
+                        <Route path="/about" component={About}/>
+                    </Switch>
+                </div>   
             </div>
         </Router>
     )
