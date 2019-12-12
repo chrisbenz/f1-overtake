@@ -37,7 +37,9 @@ export default function About() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
-          Dif
+          This application uses the Ergast Developer API to pull and
+          display data about F1.
+          https://ergast.com/mrd/
         </Typography>
       </main>
     </div>

@@ -4,7 +4,7 @@ import AppContainer from "./components/AppContainer";
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from "./components/About";
 import Home from "./components/Home";
-import Data from "./components/Data";
+import DataContainer from "./components/DataContainer";
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -59,7 +59,7 @@ export default function Root() {
                     <AppContainer/>
                     <Switch>
                         <Route path="/" exact component={Home}/>
-                        <Route path="/data" component={Data}/>
+                        <Route path="/data" component={DataContainer}/>
                         <Route path="/about" component={About}/>
                     </Switch>
                 </div>   
