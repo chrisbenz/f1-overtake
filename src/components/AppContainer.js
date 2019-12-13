@@ -1,9 +1,5 @@
 import React from "react";
-import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
-import f1Logo from "../images/f1.png";
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import ListItem from '@material-ui/core/ListItem';
@@ -15,7 +11,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import HomeIcon from '@material-ui/icons/Home';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import Divider from '@material-ui/core/Divider';
-import styles from "../styles/style.css";
+import Header from "./Header";
 
 
 const drawerWidth = 240;
@@ -51,14 +47,7 @@ export default function AppContainer() {
     <div className={classes.root}>
       <div className={classes.root}>
         <CssBaseline />
-          <AppBar position="fixed" className={classes.appBar}>
-            <Toolbar>
-              <img src={f1Logo} alt="F1 Logo" className="logo" style={styles}/>
-              <Typography variant="h6" noWrap>
-                Overtake
-              </Typography>
-            </Toolbar>
-          </AppBar>
+          <Header />
           <Drawer
             className={classes.drawer}
             variant="permanent"
