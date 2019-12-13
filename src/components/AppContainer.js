@@ -2,17 +2,8 @@ import React from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import List from '@material-ui/core/List';
-import { Link } from "react-router-dom";
-import InfoIcon from '@material-ui/icons/Info';
-import HomeIcon from '@material-ui/icons/Home';
-import EqualizerIcon from '@material-ui/icons/Equalizer';
-import Divider from '@material-ui/core/Divider';
 import Header from "./Header";
-
+import NavMenu from "./navigation/NavMenu";
 
 const drawerWidth = 240;
 
@@ -56,27 +47,7 @@ export default function AppContainer() {
             }}
           >
           <div className={classes.toolbar} />
-            <List>
-              <Link style={{textDecoration:'none', color:'grey'}} to="/">
-                <ListItem button key="home">
-                  <ListItemIcon><HomeIcon /></ListItemIcon>
-                    <ListItemText primary="Home" />
-                      </ListItem>
-              </Link>
-              <Link  style={{textDecoration:'none', color:'grey'}} to="/data">
-                <ListItem button key="data">
-                  <ListItemIcon><EqualizerIcon /></ListItemIcon>
-                    <ListItemText primary="Data" />
-                      </ListItem>
-              </Link>
-              <Link  style={{textDecoration:'none', color:'grey'}} to="/about">
-                <ListItem button key="about">
-                  <ListItemIcon><InfoIcon /></ListItemIcon>
-                    <ListItemText primary="About" />
-                      </ListItem>
-              </Link>
-            </List>
-            <Divider />
+          <NavMenu />
           </Drawer>
         </div>
       </div>

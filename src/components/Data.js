@@ -6,6 +6,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const drawerWidth = 240;
 
@@ -39,6 +40,8 @@ export default function Data(props) {
     <div className={classes.root}>
       <main className={classes.content}>
         <div className={classes.toolbar} />
+        {props.data.isLoading ? <CircularProgress color="inherit"/> 
+        : <div>
           <Typography component="h2" variant="h6" color="inherit" gutterBottom>
             Seasonal Data
           </Typography>
@@ -52,7 +55,7 @@ export default function Data(props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {props.data.map(row => (
+              {props.data.raceInfo.map(row => (
                 <TableRow key={row.round}>
                   <TableCell>{row.round}</TableCell>
                   <TableCell>{row.raceName}</TableCell>
@@ -62,7 +65,8 @@ export default function Data(props) {
               ))}
             </TableBody>
           </Table>
-    
+          </div>
+          }
       </main>
     </div>
   );

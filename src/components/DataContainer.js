@@ -7,18 +7,22 @@ export default class DataContainer extends React.Component {
     super()
     this.state = {
       raceInfo: [],
+      isLoading: true
     }
   }
 
   componentDidMount() {
     fetch("http://ergast.com/api/f1/2019.json")
       .then(response => response.json())
-      .then(data => this.setState({ raceInfo: data.MRData.RaceTable.Races}));
+      .then(data => this.setState({ 
+        raceInfo: data.MRData.RaceTable.Races,
+        isLoading: false,
+      }));
   }
 
   render() {
     return(
-      <Data data={this.state.raceInfo}/>
+      <Data data={this.state}/>
     )
   }
 }
