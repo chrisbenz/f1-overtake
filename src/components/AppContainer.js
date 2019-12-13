@@ -37,14 +37,12 @@ export default function AppContainer() {
   return (
     <div className={classes.root}>
       <div className={classes.root}>
-        <CssBaseline />
+          <CssBaseline />
           <Header />
           <Drawer
             className={classes.drawer}
             variant="permanent"
-            classes={{
-              paper: classes.drawerPaper,
-            }}
+            classes={{paper: classes.drawerPaper,}}
           >
           <div className={classes.toolbar} />
           <NavMenu />
