@@ -9,6 +9,10 @@ import TableRow from '@material-ui/core/TableRow';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 const drawerWidth = 240;
 
@@ -33,17 +37,48 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3),
   },
   toolbar: theme.mixins.toolbar,
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
 }));
 
 export default function Data(props) {
   const classes = useStyles();
+
+  const [reportType, setreportType] = React.useState('races');
+
+  const handleChange = event => {
+    setreportType(event.target.value);
+  };
 
   return (
     <div className={classes.root}>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {props.data.isLoading ? <CircularProgress color="inherit" />
-          : <div>
+          : 
+          <div>
+            <Grid item xs={9}>
+              <FormControl className={classes.formControl}>
+                <InputLabel id="demo-simple-select-label">Reports</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={reportType}
+                  onChange={handleChange}
+                >
+                  <MenuItem value="races">Races</MenuItem>
+                  <MenuItem value="drivers">Drivers</MenuItem>
+                  <MenuItem value="constructors">Constructors</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
             <Grid item xs={12}>
               <Paper className={classes.paper}>
                 <Typography component="h2" variant="h6" color="inherit" gutterBottom>
