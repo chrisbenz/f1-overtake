@@ -1,5 +1,4 @@
 import React from "react";
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,10 +12,10 @@ import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import { Link } from "react-router-dom";
 import InfoIcon from '@material-ui/icons/Info';
-import MailIcon from '@material-ui/icons/Mail';
 import HomeIcon from '@material-ui/icons/Home';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import Divider from '@material-ui/core/Divider';
+import styles from "../styles/style.css";
 
 
 const drawerWidth = 240;
@@ -54,7 +53,7 @@ export default function AppContainer() {
         <CssBaseline />
           <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
-              <img src={f1Logo} alt="F1 Logo" className="logo"/>
+              <img src={f1Logo} alt="F1 Logo" className="logo" style={styles}/>
               <Typography variant="h6" noWrap>
                 Overtake
               </Typography>
