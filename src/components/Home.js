@@ -37,7 +37,8 @@ export default function Home() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
-          Home
+          Welcome to the F1 Overtake app! Here you can find updated stats, news, and info on all 
+          things Formula 1!
         </Typography>
       </main>
     </div>
