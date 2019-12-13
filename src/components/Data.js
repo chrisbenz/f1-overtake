@@ -6,16 +6,16 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    
+
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -42,15 +42,14 @@ export default function Data(props) {
     <div className={classes.root}>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {props.data.isLoading ? <CircularProgress color="inherit"/> 
-        : <div>
-            <Grid container spacing={6}>
-              <Grid item xs={12}>
-                <Paper className={classes.paper}>
-                  <Typography component="h2" variant="h6" color="inherit" gutterBottom>
-                    Seasonal Data
-                  </Typography>
-                  <Table size="small">
+        {props.data.isLoading ? <CircularProgress color="inherit" />
+          : <div>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <Typography component="h2" variant="h6" color="inherit" gutterBottom>
+                  Seasonal Data
+                </Typography>
+                <Table size="small">
                   <TableHead>
                     <TableRow>
                       <TableCell>Round</TableCell>
@@ -69,15 +68,11 @@ export default function Data(props) {
                       </TableRow>
                     ))}
                   </TableBody>
-                  </Table>
-                </Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper}>test</Paper>
-              </Grid>
+                </Table>
+              </Paper>
             </Grid>
           </div>
-          }
+        }
       </main>
     </div>
   );

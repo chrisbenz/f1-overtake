@@ -5,7 +5,7 @@ import About from "./components/About";
 import Home from "./components/Home";
 import DataContainer from "./components/DataContainer";
 import { makeStyles } from '@material-ui/core/styles';
-
+import Glossary from "./components/Glossary";
 
 const drawerWidth = 240;
 
@@ -45,6 +45,7 @@ export default function Root() {
                         <Route path="/" exact component={Home}/>
                         <Route path="/data" component={DataContainer}/>
                         <Route path="/about" component={About}/>
+                        <Route path="/glossary" component={Glossary}/>
                     </Switch>
                 </div>   
             </div>
