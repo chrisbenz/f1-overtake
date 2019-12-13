@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
+import Link from '@material-ui/core/Link';
 
 const drawerWidth = 240;
 
@@ -39,8 +39,10 @@ export default function About() {
         <Typography paragraph>
           This application uses the Ergast Developer API to pull and
           display data about F1.
-          https://ergast.com/mrd/
         </Typography>
+        <Link color="primary" href="https://ergast.com/mrd/">
+          https://ergast.com/mrd/
+        </Link>
       </main>
     </div>
   );

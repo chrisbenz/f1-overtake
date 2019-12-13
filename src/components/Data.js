@@ -1,6 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 const drawerWidth = 240;
 
@@ -27,26 +32,37 @@ const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
 }));
 
-export default function Data() {
+export default function Data(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
+          <Typography component="h2" variant="h6" color="inherit" gutterBottom>
+            Seasonal Data
+          </Typography>
+          <Table size="small">
+            <TableHead>
+              <TableRow>
+                <TableCell>Round</TableCell>
+                <TableCell>Race Name</TableCell>
+                <TableCell>Circuit</TableCell>
+                <TableCell>Location</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {props.data.map(row => (
+                <TableRow key={row.round}>
+                  <TableCell>{row.round}</TableCell>
+                  <TableCell>{row.raceName}</TableCell>
+                  <TableCell>{row.Circuit.circuitName}</TableCell>
+                  <TableCell>{row.Circuit.Location.locality}, {row.Circuit.Location.country}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+    
       </main>
     </div>
   );
