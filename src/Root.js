@@ -1,11 +1,11 @@
 import React from "react";
 import AppContainer from "./components/AppContainer";
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import About from "./components/About";
-import Home from "./components/Home";
-import DataContainer from "./components/DataContainer";
+import About from "./components/about/About";
+import Home from "./components/home/Home";
+import DataContainer from "./components/data/DataContainer";
 import { makeStyles } from '@material-ui/core/styles';
-import Glossary from "./components/Glossary";
+import Glossary from "./components/glossary/Glossary";
 
 const drawerWidth = 240;
 
