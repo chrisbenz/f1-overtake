@@ -40,7 +40,7 @@ export default function Header() {
           <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
               <img src={f1Logo} alt="F1 Logo" className="logo" style={styles}/>
-              <Typography variant="h6" noWrap>
+              <Typography variant="h5" noWrap>
                 Overtake
               </Typography>
             </Toolbar>

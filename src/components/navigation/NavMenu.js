@@ -8,32 +8,39 @@ import InfoIcon from '@material-ui/icons/Info';
 import HomeIcon from '@material-ui/icons/Home';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import Divider from '@material-ui/core/Divider';
+import MenuBook from '@material-ui/icons/MenuBook';
 import { styles } from "./styles"
 
 export default function NavMenu() {
-    return (
-        <div>
-            <List>
-              <Link style={styles} to="/">
-                <ListItem button key="home">
-                  <ListItemIcon><HomeIcon /></ListItemIcon>
-                    <ListItemText primary="Home" />
-                </ListItem>
-              </Link>
-              <Link  style={styles} to="/data">
-                <ListItem button key="data">
-                  <ListItemIcon><EqualizerIcon /></ListItemIcon>
-                    <ListItemText primary="Data" />
-                </ListItem>
-              </Link>
-              <Link  style={styles} to="/about">
-                <ListItem button key="about">
-                  <ListItemIcon><InfoIcon /></ListItemIcon>
-                    <ListItemText primary="About" />
-                </ListItem>
-              </Link>
-            </List>
-            <Divider />
-        </div>
-    )
+  return (
+    <div>
+      <List>
+        <Link style={styles} to="/">
+          <ListItem button key="home">
+            <ListItemIcon><HomeIcon /></ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItem>
+        </Link>
+        <Link style={styles} to="/data">
+          <ListItem button key="data">
+            <ListItemIcon><EqualizerIcon /></ListItemIcon>
+            <ListItemText primary="Data" />
+          </ListItem>
+        </Link>
+        <Link style={styles} to="/glossary">
+          <ListItem button key="glossary">
+            <ListItemIcon><MenuBook /></ListItemIcon>
+            <ListItemText primary="Glossary" />
+          </ListItem>
+        </Link>
+        <Link style={styles} to="/about">
+          <ListItem button key="about">
+            <ListItemIcon><InfoIcon /></ListItemIcon>
+            <ListItemText primary="About" />
+          </ListItem>
+        </Link>
+      </List>
+      <Divider />
+    </div>
+  )
 }
