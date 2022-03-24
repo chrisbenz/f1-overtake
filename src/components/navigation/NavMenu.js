@@ -1,14 +1,14 @@
 import React from "react";
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import List from '@material-ui/core/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import List from '@mui/material/List';
 import { Link } from "react-router-dom";
-import InfoIcon from '@material-ui/icons/Info';
-import HomeIcon from '@material-ui/icons/Home';
-import EqualizerIcon from '@material-ui/icons/Equalizer';
-import Divider from '@material-ui/core/Divider';
-import MenuBook from '@material-ui/icons/MenuBook';
+import InfoIcon from '@mui/icons-material/Info';
+import HomeIcon from '@mui/icons-material/Home';
+import EqualizerIcon from '@mui/icons-material/Equalizer';
+import Divider from '@mui/material/Divider';
+import MenuBook from '@mui/icons-material/MenuBook';
 import { styles } from "./styles"
 
 export default function NavMenu() {

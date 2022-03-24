@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from "./components/about/About";
 import Home from "./components/home/Home";
 import DataContainer from "./components/data/DataContainer";
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import Glossary from "./components/glossary/Glossary";
 
 const drawerWidth = 240;
@@ -12,7 +12,6 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,

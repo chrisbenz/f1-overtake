@@ -1,7 +1,7 @@
 import React from "react";
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@mui/material/CssBaseline';
+import makeStyles from '@mui/styles/makeStyles';
+import Drawer from '@mui/material/Drawer';
 import Header from "./Header";
 import NavMenu from "./navigation/NavMenu";
 
